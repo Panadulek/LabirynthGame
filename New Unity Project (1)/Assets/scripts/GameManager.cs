@@ -6,15 +6,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
     [SerializeField] uint time;
-    bool pause;
     bool endGame;
     bool win;
-    bool mode;
+    static bool mode;
     // Start is called before the first frame update
     void Start()
     {
         mode = true;
-        pause = false;
         endGame = false;
         win = false;
         if (gameManager == null)
@@ -69,7 +67,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("Resume Game");
                 Time.timeScale = 1f;
-      
+                
             }
             mode = !mode;
         }
