@@ -4,14 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    enum Keys : int
+    {
+        Red = 0,
+        Green = 1,
+        Gold = 2
+    };
+
     public static GameManager gameManager;
     [SerializeField] uint time;
     bool endGame;
     bool win;
     static bool mode;
+    int point;
+    public  int[] keys; 
     // Start is called before the first frame update
     void Start()
     {
+        keys = new int[3];
+        for(int i = 0; i <= (int)Keys.Gold; i++)
+        {
+            keys[i] = 0;
+        }
+        point = 0;
         mode = true;
         endGame = false;
         win = false;
@@ -79,4 +94,15 @@ public class GameManager : MonoBehaviour
     {
         chaneStaus();
     }
+    public void AddPoint(int point)
+    {
+        this.point += point;
+        
+    }
+    public void Freez(int freez)
+    {
+        CancelInvoke("Stoper");
+        InvokeRepeating("Stoper", freez, 1);
+    }
+
 }
