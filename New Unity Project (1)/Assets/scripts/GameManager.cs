@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    enum Keys : int
+    public enum Keys : int
     {
         Red = 0,
         Green = 1,
@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     };
 
     public static GameManager gameManager;
-    [SerializeField] uint time;
+    [SerializeField] int time;
     bool endGame;
     bool win;
     static bool mode;
@@ -104,5 +104,16 @@ public class GameManager : MonoBehaviour
         CancelInvoke("Stoper");
         InvokeRepeating("Stoper", freez, 1);
     }
+    public void addKey(Keys color)
+    {
+        keys[(int)color]++;
+    }
+    public void addTime(int time)
+    {
 
+        this.time += time;
+    }
 }
+
+//11111111 11111111 11111111 11111111
+//11111111 11111111 11111111 11111111

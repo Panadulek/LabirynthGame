@@ -61,4 +61,5 @@ public class PlayerController : MonoBehaviour
             hit.gameObject.GetComponent<PickUp>().Picked();
         }
     }
+
 }
