@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SlowerPlane
   - FasterPlane
+  - PickUp
   layers:
   - Default
   - TransparentFX

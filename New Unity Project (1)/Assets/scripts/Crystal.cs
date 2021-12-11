@@ -19,5 +19,6 @@ public class Crystal : PickUp
     override public void Picked()
     {
         GameManager.gameManager.AddPoint(point);
+        base.Picked();
     }
 }

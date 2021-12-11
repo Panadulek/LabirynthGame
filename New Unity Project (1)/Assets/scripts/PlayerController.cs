@@ -54,12 +54,20 @@ public class PlayerController : MonoBehaviour
         updateSpeed();
     }
 
-    private void OnControllerColiderHit(ControllerColliderHit hit)
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.gameObject.tag ==  "PickUp")
         {
             hit.gameObject.GetComponent<PickUp>().Picked();
         }
     }
+    private void OnTriggerEnter(Collider hit)
+    {
+        if (hit.gameObject.tag == "PickUp")
+        {
+            hit.gameObject.GetComponent<PickUp>().Picked();
+        }
+    }
+
 
 }

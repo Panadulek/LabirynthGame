@@ -20,6 +20,6 @@ public class Clock : PickUp
     public override void Picked()
     {
         GameManager.gameManager.addTime(time * b);
-        Destroy(this.gameObject);
+        base.Picked();
     }
 }

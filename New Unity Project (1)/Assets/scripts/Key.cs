@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Key : PickUp
 {
-    GameManager.Keys colorKey;
+    public GameManager.Keys colorKey;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,6 @@ public class Key : PickUp
     public override void Picked()
     {
         GameManager.gameManager.addKey(colorKey);
-        Destroy(this.gameObject);
+        base.Picked();
     }
 }
